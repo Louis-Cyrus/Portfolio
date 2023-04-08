@@ -1,0 +1,150 @@
+@use '../../../styles/config.scss';
+
+.Home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 84vh;
+}
+  
+.HomeBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.HomeBodyContainer {
+border-radius: 50%;
+height: 312px;
+-webkit-tap-highlight-color: transparent;
+transform: scale(0.9);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+width: 600px;
+}
+
+.HomeBodyContainer::after {
+    content: "";
+    height: 10px;
+    position: absolute;
+    top: 390px;
+    width: 100%;
+}
+
+        //&:hover {
+          //  transform: scale(1);
+        //}
+
+.HomeBodyContainerInner {
+    clip-path: path("M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z");
+    position: relative;
+    transform-origin: 50%;
+    top: -200px;
+}
+
+.HomeBodyContainerCircle {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 380px;
+    left: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 205px;
+    width: 380px;
+}
+
+.HomeBodyContainerImage {
+    pointer-events: none;
+    width: 31rem;
+    position: relative;
+    transform: translateY(20px) scale(1.15);
+    transform-origin: 95% top;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.HomeBodyContainerImage:hover{
+    transform: translateY(0) scale(1.2);
+}
+
+.HomeBodyContent {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+} 
+
+.HomeBodyContentTitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    @include config.title-shadow;
+}
+  
+.HomeBodyContentSubtitle {
+    color: #252525;
+    font-size: 2.5rem;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    background-image: linear-gradient(to right, #FFB200 0, #FFB200 100%);
+    background-position: 0 1.2em;
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background .5s;
+}
+
+.HomeBodyContentSubtitle:hover{
+    background-size: 88% 23%;
+    background-position: 0 0.2em;
+}
+
+.Paris {
+    color: #b71540;
+}
+
+.HomeBodyContentButtons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+.HomeBodyContentButtonsLink {
+    text-decoration: none;
+}
+
+.HomeBodyContentButtonsButton {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-right: 5rem;
+    border-radius: 1rem;
+    width: 15em;
+    background-color: inherit;
+    color: #181823;
+    opacity: 0.6;
+    box-shadow: 0 0 0.4rem #dfd9d9;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.HomeBodyContentButtonsButton:active {
+    color: white;
+    box-shadow: 0 0.2rem #dfd9d9;
+    transform: translateY(0.2rem);
+}
+
+.HomeBodyContentButtonsButton:hover:not(:disabled) {
+    background: config.$button-color;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+}
+
+.HomeBodyContentButtonsButton:disabled {
+    cursor: auto;
+    color: grey;
+}

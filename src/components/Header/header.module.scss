@@ -1,0 +1,56 @@
+@use '../../styles/config.scss';
+
+.headerApp {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+}
+
+.headerTitle {
+  text-decoration: none;
+
+  h2{
+    margin: 0;
+    padding: 0;
+    color: config.$dark-color;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    font-variant: small-caps;
+    font-size: 2rem;
+    }
+}
+
+.headerNavList {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.headerNavItem {
+  margin-left: 1rem;
+}
+
+.headerNavLink {
+  color: config.$dark-color;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-variant: small-caps;
+  transition: all 0.5s ease-in-out;
+  padding: 0 3rem;
+}
+
+.headerNavLink:hover {
+  color: config.$link-color;
+}
+
+.headerAppBody {
+  flex: 1;
+}

@@ -1,0 +1,23 @@
+@use '../../styles/config.scss';
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footerText {
+    font-size: 1.3rem;
+    opacity: 0.5;
+    margin-right: 3rem;
+}
+
+.socialMediaItem {
+    font-size: 1.3rem;
+    margin-right: 1.2rem;
+    color: black;
+    opacity: 0.5;
+}
+
+.socialMediaItem:hover {
+    color: config.$button-color;
+}
