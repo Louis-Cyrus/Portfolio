@@ -14,7 +14,7 @@ export default function Home() {
         <div className={homeStyle.HomeBodyContent}>
           <h1 className={homeStyle.HomeBodyContentTitle}>Louis-Cyrus Sanjabi</h1>
           <h3 className={homeStyle.HomeBodyContentSubtitle}>
-            Hey I am a front-end developer based in <span className={homeStyle.Paris}>Paris, France</span>.<br/>
+            Hey I am a front-end developer based in <span className={homeStyle.Paris}>Paris, France</span><br/>
             You can see my projects here on my Portfolio</h3>
           <div className={homeStyle.HomeBodyContentButtons}>
             <Link href="/portfolio" download>
