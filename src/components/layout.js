@@ -5,7 +5,7 @@ import styles from './layout.module.scss';
 import sunny from '../../public/images/sunny.png'
 
 const name = 'Louis-Cyrus Sanjabi';
-export const siteTitle = 'LC Sanjabi portfolio';
+export const siteTitle = 'Welcome to my portfolio';
 
 export default function Layout({ children}) {
   return (

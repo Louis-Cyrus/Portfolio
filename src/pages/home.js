@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import homeStyle from './Home.module.scss'
+import homeStyle from '../pages/Styles/Home.module.scss'
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
             Hey I am a front-end developer based in <span className={homeStyle.Paris}>Paris, France</span><br/>
             You can see my projects here on my Portfolio</h3>
           <div className={homeStyle.HomeBodyContentButtons}>
-            <Link href="/portfolio" download>
+            <Link href="/portfolio">
               <span className={homeStyle.HomeBodyContentButtonsLink}>
                 <button className={homeStyle.HomeBodyContentButtonsButton}>See my projects</button>
               </span>

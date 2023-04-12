@@ -1,4 +1,4 @@
-@use '../../../styles/config.scss';
+@use '../../styles/config.scss';
 
 .Home {
     display: flex;
@@ -118,33 +118,5 @@ width: 600px;
 }
 
 .HomeBodyContentButtonsButton {
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-right: 5rem;
-    border-radius: 1rem;
-    width: 15em;
-    background-color: inherit;
-    color: #181823;
-    opacity: 0.6;
-    box-shadow: 0 0 0.4rem #dfd9d9;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.HomeBodyContentButtonsButton:active {
-    color: white;
-    box-shadow: 0 0.2rem #dfd9d9;
-    transform: translateY(0.2rem);
-}
-
-.HomeBodyContentButtonsButton:hover:not(:disabled) {
-    background: config.$button-color;
-    color: white;
-    text-shadow: 0 0.1rem #bcb4b4;
-}
-
-.HomeBodyContentButtonsButton:disabled {
-    cursor: auto;
-    color: grey;
+   @include config.button-style;
 }
