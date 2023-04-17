@@ -1,10 +1,55 @@
+// COLORS
 $light-color: #FFF;
 $dark-color: #000;
 
+//BUTTONS
 $button-color: rgba(183, 21, 64, 0.6);
 $button-background-color: #4a69bd;
 $button-text-color: #181823;
-$link-color: #DC3535;
+
+@mixin button-style {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-right: 5rem;
+    border-radius: 1rem;
+    width: 15em;
+    background-color: $button-background-color;
+    color: $button-text-color;
+    opacity: 0.6;
+    box-shadow: 0 0 0.4rem #dfd9d9;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  
+    &:active {
+      color: white;
+      box-shadow: 0 0.2rem #dfd9d9;
+      transform: translateY(0.2rem);
+    }
+  
+    &:hover:not(:disabled) {
+      background: $button-color;
+      color: white;
+      text-shadow: 0 0.1rem #bcb4b4;
+    }
+  
+    &:disabled {
+      cursor: auto;
+      color: grey;
+    }
+}
+
+// TITLES
+$underline-color: #facf0f;
+
+@mixin title {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-variant: small-caps;
+    margin-bottom: 4rem;
+    @include title-shadow;
+}
 
 @mixin title-shadow{
     @keyframes title-shadow {
@@ -54,38 +99,17 @@ $link-color: #DC3535;
         }
     }
     
-    animation: title-shadow 1.5s ease-in-out;
-    
+    animation: title-shadow 1.5s ease-in-out;  
 }
 
-@mixin button-style {
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-right: 5rem;
-    border-radius: 1rem;
-    width: 15em;
-    background-color: $button-background-color;
-    color: $button-text-color;
-    opacity: 0.6;
-    box-shadow: 0 0 0.4rem #dfd9d9;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  
-    &:active {
-      color: white;
-      box-shadow: 0 0.2rem #dfd9d9;
-      transform: translateY(0.2rem);
-    }
-  
-    &:hover:not(:disabled) {
-      background: $button-color;
-      color: white;
-      text-shadow: 0 0.1rem #bcb4b4;
-    }
-  
-    &:disabled {
-      cursor: auto;
-      color: grey;
-    }
-}  
+@mixin underline {
+    content: '';
+    position: absolute;
+    top: calc(32% + 1.5rem);
+    height: 5px;
+    width: 5rem;
+    background: $underline-color;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}

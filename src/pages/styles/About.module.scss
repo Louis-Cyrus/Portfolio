@@ -10,24 +10,11 @@
 }
 
 .aboutTitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    font-variant: small-caps;
-    margin-bottom: 4rem;
-    @include config.title-shadow;
+    @include config.title;
 }
 
-.aboutTitle::after {
-    content: '';
-    position: absolute;
-    top: calc(32% + 1.5rem);
-    height: 5px;
-    width: 5rem;
-    background: #facf0f;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
+.aboutUnderline {
+    @include config.underline;
 }
 
 .aboutDescription {
