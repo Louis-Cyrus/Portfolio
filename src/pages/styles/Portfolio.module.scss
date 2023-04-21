@@ -17,44 +17,79 @@
     @include config.underline;
 }
 
-.btnContainer{
-    display: flex;
-    background-color: rgba(44, 2, 117, 0.2);
-    border-radius: 8px;
-}
-
-.wrapper {
-    position: relative;
-    height: var(--height);
-    margin-top: 30px;
-    overflow-x: hidden;
-}
-  
-.splide {
-position: absolute;
-top: 0;
-left: 0;
-width: calc(125vw + 30px);
-}
-
-.slide {
-padding: 0 0 0 30px;
-}
-
 .card {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-background: #8f44fd;
-height: var(--height);
-padding: 60px 40px;
-border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
+    background-color: #fff;
+    border-radius: 0.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.material-symbols-outlined {
-font-size: 40px;
-background: rgb(255 255 255 / 12%);
-border-radius: 50%;
-padding: 16px;
+.cardImage {
+    flex: 1;
+}
+
+.cardImage img {
+    width: 100%;
+    max-width: 100%; // Limite la largeur de l'image à 100% de son conteneur parent
+    height: auto; // Ajuste automatiquement la hauteur de l'image en fonction de sa largeur
+    object-fit: cover; // Permet de conserver les proportions de l'image tout en la remplissant
+    display: block;
+    border-top-left-radius: 0.9em;
+    border-bottom-left-radius: 0.9em;
+}
+
+.cardInfo {
+    flex: 2;
+    max-width: 40%;
+    padding: 1.8em;
+    padding-top: 0;
+}
+
+.projectTitle {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    font-variant: small-caps;
+    font-weight: 600;
+    padding-top: 1em;
+}
+
+.projectDescription {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    padding: 1rem 0;
+}
+
+.projectLinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectLink {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    padding: 1em 0;
+    margin-right: 0.5rem;
+    font-size: 0.81rem;
+    font-weight: 700;
+    opacity: 0.6;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.noUnderline {
+    text-decoration: none;
+    color: #181823;
+}
+
+
+.noUnderline:hover {
+    color: config.$button-color;
 }
