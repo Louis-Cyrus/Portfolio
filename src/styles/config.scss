@@ -40,7 +40,6 @@ $button-text-color: #181823;
 }
 
 // TITLES
-$underline-color: #facf0f;
 
 @mixin title {
     font-family: 'Inter', sans-serif;
@@ -100,16 +99,4 @@ $underline-color: #facf0f;
     }
     
     animation: title-shadow 1.5s ease-in-out;  
-}
-
-@mixin underline {
-    content: '';
-    position: absolute;
-    top: calc(32% + 1.5rem);
-    height: 5px;
-    width: 5rem;
-    background: $underline-color;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
 }

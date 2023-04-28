@@ -51,45 +51,47 @@ export default function Portfolio() {
             </Head>
             <div className={portfolioStyle.portfolio}>
                 <h2 className={portfolioStyle.portfolioTitle}>My Projects</h2>
-                <div className={portfolioStyle.portfolioUnderline}></div>
 
                 <section className={portfolioStyle.portfolioProjects}>
-                <Carousel
-                    showArrows={true}
-                    showStatus={false}
-                    showThumbs={false}
-                    infiniteLoop={true}
-                    centerMode={true}
-                    centerSlidePercentage={50}
-                >
-                    {projects.map((project) => (
-                        <div key={project.id} className={portfolioStyle.card}>
+                    <Carousel
+                        showArrows={true}
+                        useKeyboardArrows={true}
+                        showStatus={false}
+                        showThumbs={false}
+                        infiniteLoop={true}
+                        centerMode={true}
+                        autoPlay={true}
+                        centerSlidePercentage={20}
+                    >
+                        {projects.map((project) => (
+                            <div key={project.id} className={portfolioStyle.card}>
+                                <section className={portfolioStyle.cardImage}>
+                                    <img src={project.imageUrl} alt={project.name} />
+                                </section>
 
-                            <section className={portfolioStyle.cardImage}>
-                                <img src={project.imageUrl} alt={project.name} />
-                            </section>
+                                <section className={portfolioStyle.cardInfo}>
+                                    <a href={project.homepage} className={portfolioStyle.noUnderline}>
+                                        <h3 className={portfolioStyle.projectTitle}>{project.name}</h3>
+                                    </a>
+                                    
+                                    <p className={portfolioStyle.projectDescription}>{project.description}</p>
 
-                            <section className={portfolioStyle.cardInfo}>
-                                <h3 className={portfolioStyle.projectTitle}>{project.name}</h3>
-                                <p className={portfolioStyle.projectDescription}>{project.description}</p>
-                                
-                                <div className={portfolioStyle.projectLinks}>
-                                    <span className={portfolioStyle.projectLink}>
-                                        <a href={project.html_url} target="_blank" rel="noopener noreferrer" className={portfolioStyle.noUnderline}>
-                                            View GitHub
-                                        </a>
-                                    </span>
-                                    <span className={portfolioStyle.projectLink}>
-                                        <a href={project.homepage} target="_blank" rel="noopener noreferrer" className={portfolioStyle.noUnderline}>
-                                            View Project
-                                        </a>
-                                    </span>
-                                </div>
-                            </section>
-                            
-                        </div>
-                    ))}
-                </Carousel>
+                                    <div className={portfolioStyle.projectLinks}>
+                                        <span className={portfolioStyle.projectLink}>
+                                            <a href={project.html_url} target="_blank" rel="noopener noreferrer" className={portfolioStyle.noUnderline}>
+                                                View GitHub
+                                            </a>
+                                        </span>
+                                        <span className={portfolioStyle.projectLink}>
+                                            <a href={project.homepage} target="_blank" rel="noopener noreferrer" className={portfolioStyle.noUnderline}>
+                                                View Project
+                                            </a>
+                                        </span>
+                                    </div>
+                                </section>
+                            </div>
+                        ))}
+                    </Carousel>
                 </section>
             </div>
         </>

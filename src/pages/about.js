@@ -15,7 +15,7 @@ export default function About() {
             </Head>
             <div className={aboutStyle.about}>
                 <h2 className={aboutStyle.aboutTitle}>About me</h2>
-                <div className={aboutStyle.aboutUnderline}></div>
+
                 <section className={aboutStyle.aboutDescription}>
 
                     <div className={aboutStyle.aboutParaph}>

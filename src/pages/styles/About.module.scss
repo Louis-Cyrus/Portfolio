@@ -13,10 +13,6 @@
     @include config.title;
 }
 
-.aboutUnderline {
-    @include config.underline;
-}
-
 .aboutDescription {
     display: flex;
     justify-content: space-between;

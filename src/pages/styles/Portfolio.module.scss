@@ -7,55 +7,53 @@
     align-items: center;
     height: auto;
     min-height: 84vh;
+    overflow-x: hidden
 }
 
 .portfolioTitle {
     @include config.title;
 }
 
-.portfolioUnderline {
-    @include config.underline;
-}
-
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 750px;
-    background-color: #fff;
-    border-radius: 0.9em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #f5f6fa;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    margin: 3rem;
 }
 
 .cardImage {
-    flex: 1;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
 .cardImage img {
-    width: 100%;
-    max-width: 100%; // Limite la largeur de l'image à 100% de son conteneur parent
-    height: auto; // Ajuste automatiquement la hauteur de l'image en fonction de sa largeur
-    object-fit: cover; // Permet de conserver les proportions de l'image tout en la remplissant
-    display: block;
-    border-top-left-radius: 0.9em;
-    border-bottom-left-radius: 0.9em;
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
 }
 
 .cardInfo {
-    flex: 2;
-    max-width: 40%;
-    padding: 1.8em;
-    padding-top: 0;
+    padding: 1rem;
 }
 
 .projectTitle {
-    font-size: 1.5rem;
-    letter-spacing: 0.2rem;
-    font-variant: small-caps;
-    font-weight: 600;
-    padding-top: 1em;
+    margin: 0 0 15px 0;
+    font-family: serif;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
 }
 
 .projectDescription {
