@@ -8,12 +8,12 @@ import clsx from "clsx";
  */
 export const SocialNetworks = ({ socialNetworks, className }) => {
   return (
-    <div className={clsx("flex gap-4", className)}>
+    <div className={clsx("flex flex-col md:flex-row gap-4", className)}>
       {socialNetworks.map(({ url, name, icon }) => (
         <a
           key={url}
           href={url}
-          className="text-primary text flex items-center gap-1 text-base"
+          className="flex items-center gap-1 text-xl transition-colors text-primary text hover:text-secondary"
         >
           {icon} <span className="underline">{name}</span>
         </a>
