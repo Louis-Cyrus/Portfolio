@@ -15,7 +15,7 @@ export const SocialNetworks = ({ socialNetworks, className }) => {
           href={url}
           className="flex items-center gap-1 text-xl transition-colors text-primary text hover:text-secondary"
         >
-          {icon} <span className="underline">{name}</span>
+          {icon} <span className="">{name}</span>
         </a>
       ))}
     </div>
