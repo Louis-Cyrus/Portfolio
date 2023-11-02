@@ -8,7 +8,7 @@ export const MemoryCard = ({ card, onClick }) => {
   const isReturned = card.state === CARD_STATE.RETURNED || card.state === CARD_STATE.FIND;
 
   return (
-    <div className="relative" onClick={onClick}>
+    <div className="relative h-12 w-11" onClick={onClick}>
       <button
         className={clsx(
           styles.transition,
