@@ -9,7 +9,7 @@ export const CommentSection = () => {
   const { data: comments, loading, error, refresh } = useFetch(commentsUrl);
 
   const handleNewComment = async (username, comment) => {
-    // Valider le username et le commentaire selon les règles spécifiées
+    
     if (username.length < 4 || username.length > 20 || comment.length < 10 || comment.length > 100) {
       // Gérer l'affichage des erreurs ici. Normalement, vous pourriez utiliser un état, 
       // mais comme spécifié pour ne pas en utiliser, vous pourriez avoir besoin de faire 
@@ -37,7 +37,7 @@ export const CommentSection = () => {
   };
 
   return (
-    <SectionWrapper title="On est à l'époque de FaceBook ?">
+    <SectionWrapper title="Feel free to leave a comment">
       <div className="flex flex-col items-center w-full max-w-2xl gap-8 m-auto ">
         <div className="grid justify-center w-full gap-4 grid-cols-auto-fill-200-300">
           {loading && <p>Loading...</p>}
