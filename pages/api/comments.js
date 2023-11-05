@@ -19,7 +19,7 @@ const handler = async (req, res) => {
 };
 
 const postHandler = async (req, res) => {
-  const { username, comment } = JSON.parse(req.body);
+  const { username, comment } = req.body;
   const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 
   if (filter.isProfane(comment) || filter.isProfane(username)) {
@@ -92,14 +92,23 @@ const getHandler = async (req, res) => {
 
   const result = response.results.map((result) => {
     const properties = result.properties;
+    // Vérifiez que la propriété existe et que le tableau `rich_text` n'est pas vide
+    const commentText = properties.Comment && properties.Comment.rich_text.length > 0
+      ? properties.Comment.rich_text[0].plain_text
+      : "";
+    const usernameText = properties.Username && properties.Username.title.length > 0
+      ? properties.Username.title[0].plain_text
+      : "";
+    
     return {
       id: result.id,
-      comment: properties.Comment.rich_text[0].plain_text,
-      username: properties.Username.title[0].plain_text,
+      comment: commentText,
+      username: usernameText,
       createdAt: properties.Created.created_time,
     };
   });
   res.status(200).json(result);
 };
+
 
 export default handler;

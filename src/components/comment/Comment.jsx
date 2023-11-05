@@ -1,3 +1,7 @@
+// Afficher les commentaires en utilisant le composant Comment
+// Mais il faut aussi afficher un loader pendant le chargement des commentaires
+// Et un message d'erreur si le chargement des commentaires échoue
+
 import { Typography } from '../atom/Typography';
 
 export const Comment = ({ username, comment, createdAt }) => {
