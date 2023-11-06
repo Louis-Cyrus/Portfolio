@@ -12,6 +12,13 @@ const handler = async (req, res) => {
             homepageUrl
             url
             stargazerCount
+            repositoryTopics(first: 10) {
+              nodes {
+                topic {
+                  name
+                }
+              }
+            }
           }
         }
       }
@@ -28,8 +35,13 @@ const handler = async (req, res) => {
       body: JSON.stringify({ query }),
     }).then((r) => r.json());
 
+    const projects = response.data.user.pinnedItems.nodes.map((repo) => ({
+      ...repo,
+      topics: repo.repositoryTopics.nodes.map((node) => node.topic.name),
+    }));
+
     res.status(200);
-    res.json(response.data.user.pinnedItems.nodes);
+    res.json(projects);
   } catch (e) {
     res.status(400);
     res.json({ error: e.message });

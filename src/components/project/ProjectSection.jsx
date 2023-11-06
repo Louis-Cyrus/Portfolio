@@ -47,7 +47,7 @@ export const ProjectSection = () => {
     <SectionWrapper title="Projects">
       <div className="flex flex-wrap justify-center gap-8">
         {state.status === 'pending' && <Loader />}
-        {state.status === 'resolved' && data.map(project => <Project key={project.id} {...project} />)}
+        {state.status === 'resolved' && data.map(project => <Project key={project.id} topics={project.topics}{...project} />)}
         {state.status === 'rejected' && <div>Error: {state.error}</div>}
       </div>
     </SectionWrapper>

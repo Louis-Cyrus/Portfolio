@@ -10,9 +10,9 @@ export const Project = ({ name, description, stargazerCount, url, homepageUrl, t
         </Typography>
       </a>
       <Typography variant="body1">{description}</Typography>
-      <div className="flex flex-wrap gap-2">
-        {topics && topics.map((topic, index) => (
-          <span key={index} className="px-2 py-1 text-xs rounded bg-secondary text-primary">
+      <div className="flex flex-wrap">
+        {topics && topics.map((topic) => (
+          <span key={topic} className="px-2 py-1 m-1 text-base bg-yellow-700 rounded text-secondary">
             {topic}
           </span>
         ))}

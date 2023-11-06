@@ -5,8 +5,10 @@
 #app {
   --color-background: 250 249 242;
   --color-paper: 242 240 231;
+  --color-button: 151 131 101;
   --color-text-primary: 0 0 0;
   --color-text-secondary: 38 38 38;
+
 
   --color-primary: 113 98 75;
   --color-secondary: 59 53 43;
@@ -15,6 +17,7 @@
 #app.dark {
   --color-background: 18 18 17;
   --color-paper: 36 35 31;
+  --color-button: 151 131 101;
   --color-text-primary: 255 255 255;
   --color-text-secondary: 217 217 217;
 
