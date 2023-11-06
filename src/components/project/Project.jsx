@@ -12,7 +12,7 @@ export const Project = ({ name, description, stargazerCount, url, homepageUrl, t
       <Typography variant="body1">{description}</Typography>
       <div className="flex flex-wrap">
         {topics && topics.map((topic) => (
-          <span key={topic} className="px-2 py-1 m-1 text-base bg-yellow-700 rounded text-secondary">
+          <span key={topic} className="px-2 py-1 m-1 text-base capitalize bg-yellow-700 rounded text-secondary">
             {topic}
           </span>
         ))}
